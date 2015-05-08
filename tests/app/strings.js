@@ -14,32 +14,30 @@ define([
     });
 
     it('you should be able to wrap lines at some arbitrary count, but don\'t break words', function() {
-      //create the data
       var formattedStr;
-      var data = [
+      var wrapCol = 5;
+      var input = [
         'abcdef abcde abc def',
         'abc abc abc',
         'a b c def'
       ];
-      var wrapCol = 5;
-
-      var computedData = [
+      var output = [
         'abcdef\nabcde\nabc\ndef',
         'abc\nabc\nabc',
         'a b c\ndef'
       ];
 
 
-      data.forEach(function(str, index) {
+      input.forEach(function(str, index) {
         formattedStr = answers.wordWrap(str, wrapCol);
         //every char at the wrap line should be a space
-        expect(formattedStr).to.eql(computedData[index]);
+        expect(formattedStr).to.eql(output[index]);
         //the last characters should still be the last characters
-        expect(formattedStr.charAt(formattedStr.length-1)).to.eql(computedData[index].charAt(computedData[index].length-1));
+        expect(formattedStr.charAt(formattedStr.length-1)).to.eql(output[index].charAt(output[index].length-1));
       });
 
     });
-    
+
     it('you should be able to reverse a string', function() {
       var data = [
         'abc',
