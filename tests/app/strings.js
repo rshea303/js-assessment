@@ -5,7 +5,6 @@ if (typeof expect !== 'function') { var expect = require('expect.js'); }
 define([
   'app/strings'
 ], function(answers) {
-
   describe('strings', function() {
     it('you should be able to reduce duplicate characters to a desired minimum', function() {
       expect(answers.reduceString('aaaabbbb', 2)).to.eql('aabb');
@@ -40,6 +39,7 @@ define([
       });
 
     });
+    
     it('you should be able to reverse a string', function() {
       var data = [
         'abc',
