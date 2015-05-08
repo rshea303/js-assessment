@@ -13,7 +13,7 @@ define([
       expect(answers.reduceString('aaxxxaabbbb', 2)).to.eql('aaxxaabb');
     });
 
-    it('you should be able to wrap lines at some arbitrary count, but don\'t break words', function() {
+    it('you should be able to wrap lines at a given number of columns, without breaking words', function() {
       var wrapCol = 5;
       var inputStrings = [
         'abcdef abcde abc def',
@@ -29,7 +29,6 @@ define([
 
       inputStrings.forEach(function(str, index) {
         formattedStr = answers.wordWrap(str, wrapCol);
-        // every char at the wrap line should be a space
         expect(formattedStr).to.eql(outputStrings[index]);
       });
     });
