@@ -7,7 +7,10 @@ define(function() {
     },
 
     sum : function(arr) {
-
+      var total = arr.reduce(function(a,b) {
+        return a + b;
+      });
+      return total;
     },
 
     remove : function(arr, item) {
