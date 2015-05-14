@@ -16,10 +16,19 @@ define(function() {
     },
 
     remove : function(arr, item) {
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i] === item) 
+            arr.splice(i, 1);
+        };
+        return arr;
     },
 
     removeWithoutCopy : function(arr, item) {
-
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i] === item) 
+            arr.splice(i, 1);
+        };
+        return arr;
     },
 
     append : function(arr, item) {
@@ -53,17 +62,21 @@ define(function() {
     },
 
     count : function(arr, item) {
+      var counter = 0;
+      for (i = 0; i < arr.length; i++) {
+        if (arr[i] === item)
+          counter += 1;
+      }
+      return counter;
     },
 
     duplicates : function(arr) {
-
     },
 
     square : function(arr) {
       return arr.map(function (x) {
         return Math.pow(x,2);
       });
-
     },
 
     findAllOccurrences : function(arr, target) {
