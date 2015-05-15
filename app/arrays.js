@@ -71,6 +71,11 @@ define(function() {
     },
 
     duplicates : function(arr) {
+      function onlyUnique(value, index, self){
+        return self.indexOf(value) === index;
+      }
+      var unique = arr.filter( onlyUnique );
+      return unique;
     },
 
     square : function(arr) {
