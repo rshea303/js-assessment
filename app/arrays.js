@@ -24,9 +24,14 @@ define(function() {
     },
 
     removeWithoutCopy : function(arr, item) {
-        for (var i = 0; i < arr.length; i++) {
-          if (arr[i] === item) 
+        var i, len;
+
+        for (i = 0, len = arr.length; i < len; i++) {
+          if (arr[i] === item) { 
             arr.splice(i, 1);
+            i = i -1;
+            len = len -1;
+          };
         };
         return arr;
     },
